@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import PokeContainer from './pokecontainer';
+import PokeContainer from '../components/pokecontainer';
+import Loading from '../components/loading';
+import fetchPokemons from '../utils/fetchPokemons';
 
 const Home = () =>{
   const [error, setError] = useState(null);
@@ -11,7 +13,6 @@ const Home = () =>{
       .then(res => res.json())
       .then(
         (result) => {
-          console.log(result);
           setPokemons(result);
           setError(false);
           setLoading(false);
@@ -30,10 +31,10 @@ const Home = () =>{
   return(
     <div>
       { loading === true ? (
-        <h1>Loading awesome Pokemons!</h1>
-      ) : (
+        <Loading />
+      ) : 
+      (
         <div> 
-          <h1>This is the home page.</h1>
           <PokeContainer pokemons={pokemons}/>
         </div>
       ) }
