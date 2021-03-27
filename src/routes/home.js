@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PokeContainer from '../components/pokecontainer';
 import Loading from '../components/loading';
-import fetchPokemons from '../utils/fetchPokemons';
 
 const Home = () =>{
   const [error, setError] = useState(null);

@@ -11,7 +11,7 @@ const MyPokedex = ({setPokedex, pokemons }) =>{
     <Container className="text-center" style={{width:"45 rem"}} >
 
       
-      { pokemons.length > 0 ? <h1>My Pokedex!</h1> : <h1>You don't have any pokemons added.. :(</h1> }
+      { pokemons.length > 0 ? <h1>My Pokedex!</h1> : <h1>Pokedex is empty!</h1> }
       { pokemons.reverse().map(pokemon => {
         return (
         <Card key={pokemon.id}>
