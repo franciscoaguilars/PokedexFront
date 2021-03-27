@@ -8,7 +8,6 @@ const ShowPage = ({pokedex, setPokedex}) => {
   const [error, setError] = useState(null);
   const [pokemon, setPokemon] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [disabled, setDisabled] = useState("");
   let { id } = useParams();
 
   const fetchPokemon = () => {
@@ -16,13 +15,14 @@ const ShowPage = ({pokedex, setPokedex}) => {
       .then(res => res.json())
       .then(
         (result) => {
-          setPokemon(result);
-          setError(false);
-          setLoading(false);
-        },
-        (error) => {
-          setLoading(true);
-          setError(error);
+          
+          if ('error' in result){
+            setError(true);
+            setLoading(false);
+          }else {
+            setPokemon(result);
+            setLoading(false);
+          }
         }
       )
     }
@@ -50,7 +50,7 @@ const ShowPage = ({pokedex, setPokedex}) => {
     loading === true ? (
       <Loading />
     ) : (
-      error !== null ? <NotFound/> : <SinglePokemon handleOnAdd = { handleOnAdd} pokemon = {pokemon}/>
+      error === true ? <NotFound/> : <SinglePokemon handleOnAdd = { handleOnAdd} pokemon = {pokemon}/>
     )
   )
 }
