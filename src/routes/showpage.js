@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import SinglePokemon from '../components/singlepokemon';
 import Loading from '../components/loading';
 import NotFound from '../components/notfound';
+import fetchSinglePokemon from '../helpers/fetchSinglePokemon';
 
 const ShowPage = ({pokedex, setPokedex}) => {
   const [error, setError] = useState(null);
@@ -10,26 +11,8 @@ const ShowPage = ({pokedex, setPokedex}) => {
   const [loading, setLoading] = useState(true);
   let { id } = useParams();
 
-  const fetchPokemon = () => {
-    fetch(`http://localhost:3001/api/v1/pokemons/${id}`)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          
-          if ('error' in result){
-            setError(true);
-            setLoading(false);
-          }else {
-            setPokemon(result);
-            setLoading(false);
-          }
-        }
-      )
-    }
-    
-
   useEffect(() =>{
-    fetchPokemon();
+    fetchSinglePokemon( setError, setLoading, setPokemon, id );
   }, [])
 
   const handleOnAdd = () =>{

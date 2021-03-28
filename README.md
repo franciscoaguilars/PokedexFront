@@ -2,6 +2,7 @@
 
 A simple app that helps you discover random Pokemons with the PokeAPI!
 
+
 ## Built with 
 
 This project consists on two parts.
@@ -9,10 +10,12 @@ This project consists on two parts.
 For the front end:
 - React
 - React Bootstrap
+- React Router
 
 For the backend, [you can find it here](https://github.com/franciscoaguilars/PokedexAPI) :
-- Rails 
-- RSpec 
+- Ruby on Rails 
+- [PokeAPI](https://pokeapi.co/)
+- RSpec (for testing)
 
 
 ## Prerequisites

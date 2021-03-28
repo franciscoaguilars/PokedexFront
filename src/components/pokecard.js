@@ -7,7 +7,7 @@ const PokeCard = ({pokemon}) =>{
   const types = pokemon.types
   return (
     <a href={`pokemon/${pokemon.id}`} className="text-decoration-none text-dark">
-      <Card border="dark" style={{ width: '18rem', height: '20rem'}} className="text-center mr-0">
+      <Card border="dark" style={{ height: '20rem'}} className="text-center">
         <Card.Body>
         <Card.Img variant="top" src={pokemon.sprites.front_default} style={{width: '10rem'}}/>
           <Card.Title>{pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1) }</Card.Title>
