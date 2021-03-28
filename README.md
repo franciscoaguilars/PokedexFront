@@ -2,6 +2,16 @@
 
 A simple app that helps you discover random Pokemons with the PokeAPI!
 
+## The app itself
+
+Home Screen
+![Home Screen](https://github.com/franciscoaguilars/PokedexFront/blob/master/src/assets/app_1.png)
+
+Show Page
+![Show Page](https://github.com/franciscoaguilars/PokedexFront/blob/master/src/assets/app_2.png)
+
+DigitalPokedex
+![Pokedex](https://github.com/franciscoaguilars/PokedexFront/blob/master/src/assets/app_3.png)
 
 ## Built with 
 
