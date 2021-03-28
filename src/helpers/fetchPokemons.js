@@ -1,5 +1,5 @@
 const fetchPokemons = (setError, setPokemons, setLoading) => {
-  fetch("http://localhost:3001/api/v1/pokemons")
+  fetch("http://digitalpokedexapi.herokuapp.com/api/v1/pokemons")
     .then(res => res.json())
     .then(
       (result) => {
